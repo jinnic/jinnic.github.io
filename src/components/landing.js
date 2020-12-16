@@ -38,22 +38,11 @@ const StyledText = styled.div`
       line-height: 150%;
     }
   }
-  span &.underline{
-    positon: relative;
+  .underline{
     border-bottom: 0.1em solid white;
     padding-bottom: 0.1em;
     margin-bottom: 0.2em;
     
-  }
-  .wave {
-    positon: absolute;
-    left: 0;
-    bottom: 0;
-    background-color:red;
-    width: 6px;
-    height: 99px;
-    margin: 0 auto;
-    display: inline-block;
   }
 `;
 

@@ -48,6 +48,27 @@ const StyledNav = styled.div`
       }
     } 
   }
+
+  .resume-button {
+    margin-left: 15px;
+    background-color: transparent;
+    border: 1px solid currentColor;
+    border-radius: var(--border-radius);
+    padding: 0.5em 1em;
+
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    &:hover,
+    &:focus,
+    &:active {
+
+    }
+    &:after {
+      display: none !important;
+    }
+  }
 `
 
 const StyledHeader = styled.header`
@@ -55,7 +76,6 @@ const StyledHeader = styled.header`
   top: 0;
   z-Index: 50;
   width: 100%;
-  
 `
 const Nav = ( ) => {
   useEffect(() => {
@@ -66,16 +86,20 @@ const Nav = ( ) => {
     <StyledHeader >
       <StyledNav id="nav">
           <ul style={{ listStyle: `none`, float: `right` }}>
-            {/* <NavLink to="/about/">About</NavLink>
-            <NavLink to="/projects/">Projects</NavLink>
-            <NavLink to="/blog/">Blog</NavLink>
-            <NavLink to="/contact/">Get in touch</NavLink>
-            <NavLink to="/resume/">Resume</NavLink> */}
             {navLinks.map(({ url, name }, i) => (
               <li key={i} >
                 <Link to={url}>{name}</Link>
               </li>
             ))}
+            <li>
+              <a
+                className="resume-button"
+                href="/HyojinYoo_SW_Engineer.pdf"
+                target="_blank"
+                rel="noopener noreferrer">
+                Resume
+              </a>
+            </li>
           </ul>
         </StyledNav>
       </StyledHeader>
