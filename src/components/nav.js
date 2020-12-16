@@ -94,7 +94,7 @@ const Nav = ( ) => {
             <li>
               <a
                 className="resume-button"
-                href="/HyojinYoo_SW_Engineer.pdf"
+                href="/portfolio/HyojinYoo_SW_Engineer.pdf"
                 target="_blank"
                 rel="noopener noreferrer">
                 Resume

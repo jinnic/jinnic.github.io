@@ -9,7 +9,7 @@ module.exports = {
     title: 'Hyojin Yoo',
     description: 'Full Stack Developer, committed to building a great user experience with efficiency. Changed careers to software engineering after a decade of work in visual communication design and creative coding. Detail oriented tech junkie.',
     siteUrl: 'https://jinnic.github.io/portfolio', 
-    image: '/og.png' // Path to 'static' folder
+    image: '/portfolio/og.png' // Path to 'static' folder
   },
   pathPrefix: "/portfolio",
   plugins: [
