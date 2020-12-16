@@ -28,12 +28,19 @@ const StyledNav = styled.div`
       margin-right: 2.2em;
     }
 
+    @media (max-width: 480px) {
+      margin-right: 1em;
+    }
+
     a {
       font-size: 14px;
       color: currentColor;
 
       &:hover{
         color: var(--purple);
+      }
+      @media (max-width: 480px) {
+        font-size: 12px;
       }
     }
   }
