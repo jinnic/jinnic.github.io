@@ -15,13 +15,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sharp`,// optimize images
     // `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        icon: 'src/images/favicon.ico'
-      }
-    }, // optimize images
     `gatsby-transformer-sharp`, 
     //`gatsby-plugin-sitemap`,
     // {
