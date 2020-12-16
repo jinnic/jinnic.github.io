@@ -38,7 +38,7 @@ const StyledText = styled.div`
       line-height: 150%;
     }
   }
-  span {
+  span &.underline{
     positon: relative;
     border-bottom: 0.1em solid white;
     padding-bottom: 0.1em;
@@ -56,12 +56,24 @@ const StyledText = styled.div`
     display: inline-block;
   }
 `;
+
+const Emoji = props => (
+  <span
+      className="emoji"
+      role="img"
+      aria-label={props.label ? props.label : ""}
+      aria-hidden={props.label ? "false" : "true"}
+  >
+      {props.symbol}
+  </span>
+);
+
 const Landing = () =>{
   return(
-    <StyledMainSection >
+    <StyledMainSection id="landing">
       <StyledText >
-        <h3>👋 Hi my name is Hyojin Yoo.</h3>
-        <h1>I’m a creative technologist and <span>software engineer</span>.</h1>
+        <h3><Emoji symbol="👋" label="wave"/> Hi my name is Hyojin Yoo.</h3>
+        <h1>I’m a creative technologist and <span className="underline">software engineer</span>.</h1>
         <p>As a detail oriented tech junkie, I’m committed to building a great user experience with efficiency. Currently based in Brooklyn, NY.</p>      
       </StyledText>
     </StyledMainSection>
@@ -69,3 +81,4 @@ const Landing = () =>{
 }
 
 export default Landing
+

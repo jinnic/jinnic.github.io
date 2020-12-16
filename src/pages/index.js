@@ -10,7 +10,6 @@ const StyledMainContainer = styled.main`
 `;
 
 const Index = ({ location }) => (
-  // console.log("location---------> ",location)
   <Layout location={location}>
     <StyledMainContainer className="fillHeight">
       <Landing />

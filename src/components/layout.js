@@ -1,10 +1,9 @@
-import React from "react"
-
+import React, { useEffect } from "react"
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { GlobalStyles } from '../styles/GlobalStyles'
 
 import {Head, Nav ,Social, Footer} from '.';
-
 
 const StyledContent = styled.div`
   positon: absolute;
@@ -15,13 +14,24 @@ const StyledContent = styled.div`
   width: 100%;
 `;
 
-console.log(GlobalStyles)
+export default function Layout({ children, location }) {
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.substring(1); // location.hash without the '#'
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView();
+          el.focus();
+        }
+      }, 0);
+    }
+  });
 
-export default function Layout({ children }) {
   return (
     <>
       <Head />
-      <Nav />
+      <Nav location={ location }/>
       <Social />
       <StyledContent>
       <GlobalStyles />
@@ -33,3 +43,8 @@ export default function Layout({ children }) {
     </>
   )
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired,
+};

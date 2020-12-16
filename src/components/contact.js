@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from 'styled-components';
 
 const StyledContactSection = styled.section`
@@ -18,7 +17,7 @@ const StyledContactSection = styled.section`
 `;
 export default function Contact() {
   return (
-    <StyledContactSection className='main'>
+    <StyledContactSection className='main' id="contact">
       <h5>Let's get in touch</h5>
       <div >
         <p>yoohyojin@gmail.com</p>

@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
+import "fontsource-karla/400.css"
+import "fontsource-karla/700.css"
+import "fontsource-lora/400.css"
+import "fontsource-lora/700.css"
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Lora:wght@400;700&display=swap'); 
-  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
 
   :root {
     --white: #FFFFFF;
@@ -26,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
     --fz-heading: 32px;
 
     --border-radius: 5px;
-    --nav-height: 100px;
+    --nav-height: 50px;
     --nav-scroll-height: 70px;
 
     --tab-height: 42px;
@@ -108,10 +110,10 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     width: 100%;
     max-width: 1600px;
-    padding: 130px 200px;
+    padding: 150px 200px;
 
     @media (max-width: 1080px) {
-      padding: 60px 100px;
+      padding: 100px 100px;
     }
     @media (max-width: 768px) {
       padding: 35px 50px;
@@ -273,6 +275,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     max-width: 100%;
     vertical-align: middle;
+    z-index: -1;
   }
 
   svg {

@@ -7,8 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Hyojin Yoo',
-    description:
-    'Full Stack Developer, committed to building a great user experience with efficiency. Changed careers to software engineering after a decade of work in visual communication design and creative coding. Detail oriented tech junkie.',
+    description: 'Full Stack Developer, committed to building a great user experience with efficiency. Changed careers to software engineering after a decade of work in visual communication design and creative coding. Detail oriented tech junkie.',
     siteUrl: 'https://hyojinyoo.com', 
     image: '/og.png' // Path to 'static' folder
   },
@@ -37,7 +36,10 @@ module.exports = {
     //   resolve: 'gatsby-plugin-web-font-loader',
     //   options: {
     //     google: {
-    //       families: ['Lora', 'Karla']
+    //       families: ['Karla']
+    //     },
+    //     google: {
+    //       families: ['Lora']
     //     }
     //   }
     // },

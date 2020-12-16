@@ -23,6 +23,7 @@ const Icon = ({ name }) => {
       return <IconLinkedin />;
     case 'WaveLine':
       return <IconWaveLine />;
+    default:
   }
 };
 

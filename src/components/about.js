@@ -9,16 +9,16 @@ const StyledAboutSection = styled.section`
   flex-direction: column;
   align-items: center;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 150px;
   
   @media (max-width: 1080px) {
-    margin-top: 50px;
+    margin-top: 100px;
   }
   @media (max-width: 768px) {
     margin-top: 35px;
   }
   @media (max-width: 480px) {
-    margin-top: 30px;
+    margin-top: 35px;
   }
   
   .inner {
@@ -155,13 +155,10 @@ const About = () => {
   `)
   // debugger
   const about = data.about.edges.filter(node => node)[0].node
-  const {frontmatter, html} = about
-  const {title, coverImg, languages, libraries, database, tools} = frontmatter
-
-  console.log("About ---------> ",about)
+  const {title, coverImg, languages, libraries, database, tools} = about.frontmatter
 
   return(
-    <StyledAboutSection className='main'>
+    <StyledAboutSection className='main' id="about">
       <StyledText>
         <h2>{title}</h2>
         <div className="about-me inner">

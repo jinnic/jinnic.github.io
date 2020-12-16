@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { useStaticQuery, graphql } from "gatsby"
 import { Icon } from './icons/icon';
 
@@ -125,9 +124,6 @@ const StyledBlog = styled.div`
 
 `;
 
-const StyledGrid = styled.div`
-
-`
 
 const Blog = () => {
   const data = useStaticQuery( graphql`
@@ -156,19 +152,19 @@ const Blog = () => {
   `)
   
   const blog = data.blog.edges.filter(({ node }) => node);
-  console.log("Blog List : ", blog)
+  // console.log("Blog List : ", blog)
   return(
-    <StyledBlogSection className='main'>
+    <StyledBlogSection className='main' id="blog">
       <div className='blog'>
         <h2>Blog</h2>
         <div className="blogs-grid">
           { blog.map(({ node }, i) => {
-            const {frontmatter, html, excerpt} = node
+            const {frontmatter, excerpt} = node
             const {title,published,publishdate,link} = frontmatter;
             const name = 'Link';
             return(
               <StyledBlog
-                key={i}
+                key={'blog'+i}
                 tabIndex="0"
                 >
                   <div className="blog-inner">

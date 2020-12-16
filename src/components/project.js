@@ -13,7 +13,7 @@ const StyledProject = styled.div`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 1fr;
+  ${'' /* grid-auto-rows: 1fr; */}
   align-items: center;
   
   &:not(:last-of-type) {
@@ -42,10 +42,22 @@ const StyledProject = styled.div`
     border-radius: 5px;
     padding: 2rem 1.75rem;
     background-color: var(--purple);
+    position: relative;
+    .line {
+        position: absolute;
+        width: 17.71px;
+        height: 4px;
+        left: 1.75rem;
+        top: 2rem;
+        background-color: var(--blue-gray);
+        margin-botto: 0.7em;
+      }
   }
 
   .project-description {
     color: var(--blue-gray);
+    padding-top: 1em;
+    text-align: left;
   }
   
   
@@ -255,21 +267,20 @@ const Project = () => {
   `)
   
   const projects = data.projects.edges.filter(({ node }) => node);
-  console.log("Project List : ", projects)
+  // console.log("Project List : ", projects)
   return(
-    <StyledProjectSection className='main'>
+    <StyledProjectSection className='main' id="projects">
       { projects.map(({ node },i) => {
         const {frontmatter, html} = node
         const {title, github, live, coverImg, tech} = frontmatter
         return(
-          <>
-          <StyledProject >
+          <StyledProject key={'project '+i}>
             <div className="project-image">
             <h5 className='project-num'>Projects/0{i+1}</h5>
-              <div key={i} className="web-template" aria-label={title}>
-                <a href={live} class="image-link" >
-                  <div class="site_header" >
-                    <div class="header_buttons">
+              <div className="web-template" aria-label={title}>
+                <a href={live} className="image-link" >
+                  <div className="site_header" >
+                    <div className="header_buttons">
                       <div></div><div></div><div></div>
                     </div>
                   </div>
@@ -279,13 +290,15 @@ const Project = () => {
             </div>
             <div className="project-info">
               <div className="project-top">
+                
                 <h2 className="project-title">{title}</h2>
                 <div className="project-tech">
-                  {tech.map( techList => (<li key={techList} >{techList}</li>) )}
+                  {tech.map( (techList, j) => (<li key={title+' techList '+j} >{techList}</li>) )}
                 </div>
               </div>
               
               <div className="project-bottom">
+                <div className="line"></div>
                 <div
                   className="project-description"
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -300,7 +313,6 @@ const Project = () => {
               </div>
             </div>
           </StyledProject>
-          </>
         )
       })}
       {/* <p>{JSON.stringify(data, null, 4)}</p> */}
