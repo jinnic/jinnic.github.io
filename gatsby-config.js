@@ -11,6 +11,7 @@ module.exports = {
     siteUrl: 'https://hyojinyoo.com', 
     image: '/og.png' // Path to 'static' folder
   },
+  pathPrefix: "/portfolio",
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,

@@ -24,6 +24,9 @@ const StyledNav = styled.div`
   li {
     display: inline-block;
     margin-right: 5em;
+    @media (max-width: 768px) {
+      margin-right: 2.2em;
+    }
 
     a {
       font-size: 14px;
