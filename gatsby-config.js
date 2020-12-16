@@ -9,7 +9,8 @@ module.exports = {
     title: 'Hyojin Yoo',
     description: 'Full Stack Developer, committed to building a great user experience with efficiency. Changed careers to software engineering after a decade of work in visual communication design and creative coding. Detail oriented tech junkie.',
     siteUrl: 'https://jinnic.github.io/portfolio', 
-    image: '/portfolio/og.png' // Path to 'static' folder
+    image: '/og.png', // Path to 'static' folder
+    icon: '/favicon.ico'
   },
   pathPrefix: "/portfolio",
   plugins: [
@@ -19,12 +20,18 @@ module.exports = {
     // `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`, 
     //`gatsby-plugin-sitemap`,
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `HyojinYoo`,
+        short_name: `HyojinYoo`,
+        start_url: `/`,
+        background_color: `#442869`,
+        theme_color: `#CDD2E0`,
+        display: 'minimal-ui',
+        icon: '/favicon.ico',
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
