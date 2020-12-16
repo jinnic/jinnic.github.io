@@ -18,6 +18,7 @@ module.exports = {
     // `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`, // optimize images
     `gatsby-transformer-sharp`, 
+    `gatsby-plugin-offline`,
     //`gatsby-plugin-sitemap`,
     // {
     //   resolve: `gatsby-plugin-typography`,
