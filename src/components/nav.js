@@ -21,6 +21,8 @@ const StyledNav = styled.div`
   height: var(--nav-height);
   color: var(--white);
   background: transparent;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   li {
     display: inline-block;
     margin-right: 5em;
@@ -49,6 +51,9 @@ const StyledNav = styled.div`
     color: var(--purple);
     background: var(--background);
     transition: var(--transition);
+
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     a {
       &:hover{
         color: var(--white);
