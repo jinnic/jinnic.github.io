@@ -36,14 +36,14 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: `${__dirname}/content`,
+        path: `./src/content`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'projects',
-        path: `${__dirname}/content/projects`,
+        path: `./src/content/projects`,
       },
     },
     `gatsby-transformer-remark`,

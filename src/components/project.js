@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import DoodlGifs from '../../content/projects/gifs/Doodl.gif'
-import FlockingBirdsGifs from '../../content/projects/gifs/FlockingBirds.gif'
-import NextdoorCooksGifs from '../../content/projects/gifs/NextdoorCooks.gif'
-import VinterestGifs from '../../content/projects/gifs/Vinterest.gif'
+import DoodlGifs from '../content/projects/gifs/Doodl.gif'
+import FlockingBirdsGifs from '../content/projects/gifs/FlockingBirds.gif'
+import NextdoorCooksGifs from '../content/projects/gifs/NextdoorCooks.gif'
+import VinterestGifs from '../content/projects/gifs/Vinterest.gif'
 
 const StyledProjectSection = styled.div`
   h2 {
