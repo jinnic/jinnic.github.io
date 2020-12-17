@@ -121,9 +121,9 @@ const StyledText = styled.div`
 
 
 const About = () => {
-  const data = useStaticQuery( graphql`
+  const data = useStaticQuery(graphql`
   query{
-    content: allMarkdownRemark(
+    about: allMarkdownRemark(
         filter: {
           fileAbsolutePath: {regex: "/about/"}
           frontmatter: { show: { ne: false } }
@@ -141,7 +141,7 @@ const About = () => {
               tools
               coverImg {
                 childImageSharp {
-                  fluid(maxWidth: 800) {
+                  fluid(maxWidth: 200) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -154,7 +154,7 @@ const About = () => {
     }
   `)
   // debugger
-  const about = data.content.edges.filter(node => node)[0].node
+  const about = data.about.edges.filter(node => node)[0].node
   const {title, coverImg, languages, libraries, database, tools} = about.frontmatter
 
   return(

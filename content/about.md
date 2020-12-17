@@ -1,6 +1,6 @@
 ---
 title: 'About'
-coverImg: './images/hyojinyoo.png'
+coverImg: './hyojinyoo.png'
 languages:
   - JavaScript
   - Ruby

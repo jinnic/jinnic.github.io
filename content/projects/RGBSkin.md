@@ -3,7 +3,7 @@ date: '2018-05-10'
 title: 'RGB Skin'
 github: ''
 live: 'http://www.hyojinyoo.com/rgb-skin'
-coverImg: './images/RGBskin.png'
+coverImg: ./RGBskin.png
 gif: false
 tech:
   - openFrameworks

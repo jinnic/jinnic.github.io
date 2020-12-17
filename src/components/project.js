@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import DoodlGifs from '../../content/projects/images/gifs/Doodl.gif'
-import FlockingBirdsGifs from '../../content/projects/images/gifs/FlockingBirds.gif'
-import NextdoorCooksGifs from '../../content/projects/images/gifs/NextdoorCooks.gif'
-import VinterestGifs from '../../content/projects/images/gifs/Vinterest.gif'
+import DoodlGifs from '../../content/projects/gifs/Doodl.gif'
+import FlockingBirdsGifs from '../../content/projects/gifs/FlockingBirds.gif'
+import NextdoorCooksGifs from '../../content/projects/gifs/NextdoorCooks.gif'
+import VinterestGifs from '../../content/projects/gifs/Vinterest.gif'
 
 const gifs = {'Doodl': DoodlGifs, 'Vinterest': VinterestGifs, 'Flocking Birds': FlockingBirdsGifs, 'Nextdoor Cooks': NextdoorCooksGifs}
 
@@ -256,11 +256,12 @@ const StyledProject = styled.div`
     }
 
 `;
+// fileAbsolutePath: {regex: "/projects/"}
 
 const Project = () => {
   const data = useStaticQuery( graphql`
   query {
-    content: allMarkdownRemark(
+    projects: allMarkdownRemark(
         filter: {
           fileAbsolutePath: {regex: "/projects/"}
           frontmatter: { show: { ne: false } }
@@ -291,7 +292,7 @@ const Project = () => {
     }
   `)
   
-  const projects = data.content.edges.filter(({ node }) => node);
+  const projects = data.projects.edges.filter(({ node }) => node);
   // console.log("Project List : ", projects)
   return(
     <StyledProjectSection className='main' id="projects">

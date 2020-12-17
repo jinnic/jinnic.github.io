@@ -3,7 +3,7 @@ date: '2020-10-01'
 title: 'Nextdoor Cooks'
 github: 'https://github.com/jinnic/nextdoorcooks_frontend'
 live: 'https://nextdoorcooks.netlify.app'
-coverImg: './images/NextdoorCooks.png'
+coverImg: ./NextdoorCooks.png
 gif: true
 tech:
   - React JS
