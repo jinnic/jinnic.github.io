@@ -8,19 +8,6 @@ import FlockingBirdsGifs from '../../content/projects/gifs/FlockingBirds.gif'
 import NextdoorCooksGifs from '../../content/projects/gifs/NextdoorCooks.gif'
 import VinterestGifs from '../../content/projects/gifs/Vinterest.gif'
 
-const gifs = {'Doodl': DoodlGifs, 'Vinterest': VinterestGifs, 'Flocking Birds': FlockingBirdsGifs, 'Nextdoor Cooks': NextdoorCooksGifs}
-
-const addImage = (isGif, title, coverImg)=>{
-  if(isGif){
-    return <img src={gifs[title]} alt={title} className="img" />
-  }else{
-    return <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
-  }
-
-  /* <img src={doodlGIF} className="img" /> */
-  // <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
-
-}
 const StyledProjectSection = styled.div`
   h2 {
       margin-bottom: 0px;
@@ -256,7 +243,10 @@ const StyledProject = styled.div`
     }
 
 `;
-// fileAbsolutePath: {regex: "/projects/"}
+
+const gifs = {'Doodl': DoodlGifs, 'Vinterest': VinterestGifs, 'Flocking Birds': FlockingBirdsGifs, 'Nextdoor Cooks': NextdoorCooksGifs}
+
+
 
 const Project = () => {
   const data = useStaticQuery( graphql`
@@ -291,7 +281,18 @@ const Project = () => {
       }
     }
   `)
+  const addImage = (isGif, title, coverImg)=>{
+    if(isGif){
+      return <img src={gifs[title]} alt={title} className="img" />
+    }else{
+      debugger
+      return <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
+    }
   
+    /* <img src={doodlGIF} className="img" /> */
+    // <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
+  
+  }
   const projects = data.projects.edges.filter(({ node }) => node);
   // console.log("Project List : ", projects)
   return(
@@ -299,6 +300,7 @@ const Project = () => {
       { projects.map(({ node },i) => {
         const {frontmatter, html} = node
         const {title, github, live, coverImg, gif, tech} = frontmatter
+        console.log("coverImg ---> ", coverImg)
         return(
           <StyledProject key={'project '+i}>
             <div className="project-image">
