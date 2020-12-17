@@ -12,7 +12,7 @@ module.exports = {
     image: '/og.png', // Path to 'static' folder
     icon: '/favicon.ico'
   },
-  pathPrefix: "/portfolio",
+  pathPrefix: `/portfolio`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
