@@ -98,10 +98,10 @@ const GlobalStyles = createGlobalStyle`
       padding: 100px 100px;
     }
     @media (max-width: 768px) {
-      padding: 35px 50px;
+      padding: 85px 50px;
     }
     @media (max-width: 480px) {
-      padding: 35px 25px;
+      padding: 85px 25px;
     }
 
      
@@ -205,7 +205,7 @@ const GlobalStyles = createGlobalStyle`
   svg {
     width: 100%;
     height: 100%;
-    fill: currentColor;
+    fill: var(--purple);
     vertical-align: middle;
 
     &.transparent {

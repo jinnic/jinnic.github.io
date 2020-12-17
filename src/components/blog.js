@@ -57,7 +57,7 @@ const StyledBlog = styled.div`
   &:focus {
     outline: 0;
     .blog-inner {
-      transform: translateY(-8px);
+      transform: translateY(-7px);
     }
   }
 
@@ -112,7 +112,19 @@ const StyledBlog = styled.div`
       botton: 2rem;
       width: 20px;
       height: 20px;
-      svg {fill: var(--blue-gray);}
+
+      &:hover,
+      &:focus {
+        ${'' /* transform: translateY(6px); */}
+      }
+
+      svg {
+        fill: var(--blue-gray);
+        &:hover,
+        &:focus {
+          fill: var(--white);
+        }
+      }
     }
     @media (max-width: 580px) {
       height: 130px;

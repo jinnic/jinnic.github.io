@@ -41,7 +41,7 @@ const StyledSocialList = styled.ul`
 
       &:hover,
       &:focus {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
       }
 
       svg {
