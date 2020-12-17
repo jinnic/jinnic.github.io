@@ -3,7 +3,8 @@ date: '2020-09-20'
 title: 'Doodl'
 github: 'https://github.com/jinnic/doodleApp-backend'
 live: 'https://doodl.netlify.app/'
-coverImg: './images/og.png'
+coverImg: './images/Doodl.png'
+gif: true
 tech:
   - React JS
   - Ruby on Rails

@@ -3,6 +3,20 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import DoodlGifs from '../../content/projects/images/Doodl.gif'
+import FlockingBirdsGifs from '../../content/projects/images/FlockingBirds.gif'
+import NextdoorCooksGifs from '../../content/projects/images/NextdoorCooks.gif'
+import VinterestGifs from '../../content/projects/images/Vinterest.gif'
+
+const gifs = {'Doodl': DoodlGifs, 'Vinterest': VinterestGifs, 'Flocking Birds': FlockingBirdsGifs, 'Nextdoor Cooks': NextdoorCooksGifs}
+
+const addImage = (isGif,title,coverImg)=>{
+  if(isGif){
+    return <img src={gifs[title]} alt={title} className="img" />
+  }else{
+    return <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
+  }
+}
 const StyledProjectSection = styled.div`
   h2 {
       margin-bottom: 0px;
@@ -250,6 +264,7 @@ const Project = () => {
               github
               live
               tech
+              gif
               coverImg {
                 childImageSharp {
                   fluid(maxWidth: 800) {
@@ -272,7 +287,7 @@ const Project = () => {
     <StyledProjectSection className='main' id="projects">
       { projects.map(({ node },i) => {
         const {frontmatter, html} = node
-        const {title, github, live, coverImg, tech} = frontmatter
+        const {title, github, live, coverImg, gif, tech} = frontmatter
         return(
           <StyledProject key={'project '+i}>
             <div className="project-image">
@@ -284,7 +299,9 @@ const Project = () => {
                       <div></div><div></div><div></div>
                     </div>
                   </div>
-                  <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
+                  {addImage(gif,title,coverImg)}
+                  {/* <img src={doodlGIF} className="img" /> */}
+                  {/* <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" /> */}
                 </a>
               </div>
             </div>

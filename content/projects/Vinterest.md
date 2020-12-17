@@ -3,7 +3,8 @@ date: '2020-09-10'
 title: 'Vinterest'
 github: 'https://github.com/jinnic/Vinterest'
 live: 'https://vinterest.herokuapp.com'
-coverImg: './images/og.png'
+coverImg: './images/Vinterest.png'
+gif: true
 tech:
   - Ruby on Rails
   - YouTube API
