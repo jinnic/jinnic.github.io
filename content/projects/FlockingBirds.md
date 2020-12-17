@@ -3,7 +3,7 @@ date: '2016-09-10'
 title: 'Flocking Birds'
 github: 'https://github.com/jinnic/flockingbirds'
 live: 'https://j-js.github.io/flockingbirds/'
-coverImg: './images/FlockingBirds.png'
+coverImg: './images/FlockingBirds.png' 
 gif: true
 tech:
   - JavaScript
