@@ -14,4 +14,4 @@ tech:
 show: true
 ---
 
-A full-stack drawing web application to share and create doodles. Featuring account authentication and full CRUD. Collaborated with Aleksa Radevish.
+A full-stack drawing web application to share and create doodles. Featuring account authentication and full CRUD. Collaborated with <a class="collaborator" href="http://aleksarad.github.io/" target="_blank" rel="noopener noreferrer">Aleksa Radevish</a>.

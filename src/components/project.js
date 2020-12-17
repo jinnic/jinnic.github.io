@@ -10,7 +10,7 @@ import VinterestGifs from '../../content/projects/images/Vinterest.gif'
 
 const gifs = {'Doodl': DoodlGifs, 'Vinterest': VinterestGifs, 'Flocking Birds': FlockingBirdsGifs, 'Nextdoor Cooks': NextdoorCooksGifs}
 
-const addImage = (isGif,title,coverImg)=>{
+const addImage = (isGif, title, coverImg)=>{
   if(isGif){
     return <img src={gifs[title]} alt={title} className="img" />
   }else{
@@ -74,6 +74,14 @@ const StyledProject = styled.div`
     text-align: left;
   }
   
+  .collaborator {
+    color: var(--blue-gray);
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      color: var(--white);
+    }
+  }
   
   .web-template{
     
@@ -83,7 +91,6 @@ const StyledProject = styled.div`
     position: relative;
     font-size: 1.7rem;
     font-weight: 400;
-    color: red;
     line-height: 1.2;
     letter-spacing: 0.0175em;
 
@@ -100,7 +107,7 @@ const StyledProject = styled.div`
       line-height: 0;
       margin: 0;
     }
-
+    
     .site_header {
       height: 1.7rem;
       border-top: 1px solid var(--purple);
@@ -299,9 +306,9 @@ const Project = () => {
                       <div></div><div></div><div></div>
                     </div>
                   </div>
-                  {addImage(gif,title,coverImg)}
+                  {/* {addImage(gif,title,coverImg)} */}
                   {/* <img src={doodlGIF} className="img" /> */}
-                  {/* <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" /> */}
+                  <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
                 </a>
               </div>
             </div>
