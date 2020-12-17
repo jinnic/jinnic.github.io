@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import DoodlGifs from '../../content/projects/images/Doodl.gif'
-import FlockingBirdsGifs from '../../content/projects/images/FlockingBirds.gif'
-import NextdoorCooksGifs from '../../content/projects/images/NextdoorCooks.gif'
-import VinterestGifs from '../../content/projects/images/Vinterest.gif'
+import DoodlGifs from '../../content/projects/images/gifs/Doodl.gif'
+import FlockingBirdsGifs from '../../content/projects/images/gifs/FlockingBirds.gif'
+import NextdoorCooksGifs from '../../content/projects/images/gifs/NextdoorCooks.gif'
+import VinterestGifs from '../../content/projects/images/gifs/Vinterest.gif'
 
 const gifs = {'Doodl': DoodlGifs, 'Vinterest': VinterestGifs, 'Flocking Birds': FlockingBirdsGifs, 'Nextdoor Cooks': NextdoorCooksGifs}
 
@@ -31,7 +31,6 @@ const StyledProject = styled.div`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
-  ${'' /* grid-auto-rows: 1fr; */}
   align-items: center;
   
   &:not(:last-of-type) {
