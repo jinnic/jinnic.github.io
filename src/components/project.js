@@ -260,7 +260,7 @@ const StyledProject = styled.div`
 const Project = () => {
   const data = useStaticQuery( graphql`
   query {
-      projects: allMarkdownRemark(
+    content: allMarkdownRemark(
         filter: {
           fileAbsolutePath: {regex: "/projects/"}
           frontmatter: { show: { ne: false } }
@@ -291,7 +291,7 @@ const Project = () => {
     }
   `)
   
-  const projects = data.projects.edges.filter(({ node }) => node);
+  const projects = data.content.edges.filter(({ node }) => node);
   // console.log("Project List : ", projects)
   return(
     <StyledProjectSection className='main' id="projects">

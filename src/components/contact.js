@@ -2,8 +2,7 @@ import React from "react"
 import styled from 'styled-components';
 
 const StyledContactSection = styled.section`
-  ${'' /* display: flex;
-  flex-direction: column; */}
+
   h5{
     font-weight: 700;
   }

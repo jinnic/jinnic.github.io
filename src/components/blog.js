@@ -128,7 +128,7 @@ const StyledBlog = styled.div`
 const Blog = () => {
   const data = useStaticQuery( graphql`
     {
-      blog: allMarkdownRemark(
+      content: allMarkdownRemark(
         filter: {
           fileAbsolutePath: {regex: "/blog/"}
           frontmatter: { show: { ne: false } }
@@ -151,7 +151,7 @@ const Blog = () => {
     }
   `)
   
-  const blog = data.blog.edges.filter(({ node }) => node);
+  const blog = data.content.edges.filter(({ node }) => node);
   // console.log("Blog List : ", blog)
   return(
     <StyledBlogSection className='main' id="blog">
