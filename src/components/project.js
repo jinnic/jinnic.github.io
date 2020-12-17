@@ -300,7 +300,6 @@ const Project = () => {
       { projects.map(({ node },i) => {
         const {frontmatter, html} = node
         const {title, github, live, coverImg, gif, tech} = frontmatter
-        console.log("coverImg ---> ", coverImg)
         return(
           <StyledProject key={'project '+i}>
             <div className="project-image">
