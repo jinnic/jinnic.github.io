@@ -17,8 +17,9 @@ const addImage = (isGif, title, coverImg)=>{
     return <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
   }
 
-  /* {addImage(gif,title,coverImg)} */
   /* <img src={doodlGIF} className="img" /> */
+  // <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
+
 }
 const StyledProjectSection = styled.div`
   h2 {
@@ -309,7 +310,7 @@ const Project = () => {
                       <div></div><div></div><div></div>
                     </div>
                   </div>
-                  <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
+                  {addImage(gif,title,coverImg)}
                 </a>
               </div>
             </div>

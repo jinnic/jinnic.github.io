@@ -40,53 +40,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    // {
-    //   resolve: 'gatsby-plugin-web-font-loader',
-    //   options: {
-    //     google: {
-    //       families: ['Karla']
-    //     },
-    //     google: {
-    //       families: ['Lora']
-    //     }
-    //   }
-    // },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Lora`,
-    //         subsets: [`serif`],
-    //         variants: [`400`, `700`]
-    //       },
-    //       {
-    //         family: `Karla`,
-    //         subsets: [`sans-serif`],
-    //         variants: [`400`, `700`]
-    //       },
-    //     ],
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       `Lora`,
-    //       `source sans pro\:400,700` // you can also specify font weights and styles
-    //     ],
-    //     display: 'swap'
-    //   }
-    // }
 
   ],
   
 }
-
-// {
-//   resolve: 'gatsby-source-filesystem',
-//   options: {
-//     name: 'projects',
-//     path: `${__dirname}/content/projects`,
-//   },
-// },
