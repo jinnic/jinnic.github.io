@@ -10,6 +10,8 @@ const GlobalStyles = createGlobalStyle`
     --white: #FFFFFF;
     --purple: #442869;
     --blue-gray: #CDD2E0;
+    --text-highlight: #82F521;
+    --pink: #E62EC6;
 
     --gradiant: linear-gradient(100.83deg, #6530C5 5.38%, #ED50C5 52.76%, #FDB47D 91.2%);
     --background: #F4F0EB;
@@ -39,9 +41,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--slate);
-    color: var(--lightest-slate);
+    background-color: var(--text-highlight);
+    color: var(--purple);
   }
+
 
   body {
     margin: 0;
@@ -72,11 +75,28 @@ const GlobalStyles = createGlobalStyle`
       }
 
       #content > * {
-        filter: blur(5px) brightness(0.7);
         transition: var(--transition);
         pointer-events: none;
         user-select: none;
+        
+        img {
+          user-select: none;
+        }
+
+        p{
+          user-select: all;
+        }
       }
+    }
+    .web-template{
+      user-select: none;
+    }    
+    img {
+      user-select: none;
+    }
+
+    p{
+      user-select: all;
     }
   }
 
