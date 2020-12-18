@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { Icon } from './icons/icon';
 
 import DoodlGifs from '../content/projects/gifs/Doodl.gif'
 import FlockingBirdsGifs from '../content/projects/gifs/FlockingBirds.gif'
@@ -47,6 +48,7 @@ const StyledProject = styled.div`
     padding: 2rem 1.75rem;
     background-color: var(--purple);
     position: relative;
+    
     .line {
         position: absolute;
         width: 17.71px;
@@ -55,13 +57,41 @@ const StyledProject = styled.div`
         top: 2rem;
         background-color: var(--blue-gray);
         margin-botto: 0.7em;
+    }
+    
+    .links {
+
+      a { 
+        width: 20px;
+        height: 20px;
+        margin-right: 1.75em;
+        &:hover,
+        &:focus {
+          transform: translateY(-3px);
+          transition: var(--transition);
+        }
       }
+
+      svg {
+        fill: var(--blue-gray);
+        &:hover,
+        &:focus {
+          fill: var(--white);
+          transition: var(--transition);
+        }
+      }
+    }
+    
+    @media (max-width: 580px) {
+      ${'' /* height: 130px; */}
+    }
   }
 
   .project-description {
     color: var(--blue-gray);
-    padding-top: 1em;
+    padding: 1em 0;
     text-align: left;
+    
   }
   
   .collaborator {
@@ -185,6 +215,10 @@ const StyledProject = styled.div`
     .project-num {
       text-align: left;
     }
+    .links a { 
+      margin-left: 1.75em;
+      margin-right: 0em;
+    }
     .project-info {
       grid-column: 7 / -1;
       text-align: right;
@@ -245,7 +279,7 @@ const StyledProject = styled.div`
 `;
 
 const gifs = {'Doodl': DoodlGifs, 'Vinterest': VinterestGifs, 'Flocking Birds': FlockingBirdsGifs, 'Nextdoor Cooks': NextdoorCooksGifs}
-
+const iconList = ['Link', 'Github']
 
 
 const Project = () => {
@@ -281,11 +315,12 @@ const Project = () => {
       }
     }
   `)
+
   const addImage = (isGif, title, coverImg)=>{
     if(isGif){
       return <img src={gifs[title]} alt={title} className="img" />
     }else{
-      debugger
+      // debugger
       return <Img fluid={coverImg.childImageSharp.fluid} alt={title} className="img" />
     }
   
@@ -330,12 +365,16 @@ const Project = () => {
                   className="project-description"
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
-                <a href={github} aria-label={github}>
-                  {/* <Icon name={'Github'} className='project-github'/> */}
-                </a>
-                <a href={live} aria-label={live}>
-                  {/* <Icon name={'Link'} className='project-link'/> */}
-                </a>
+                <div className='links'>
+                  <a href={github} aria-label={github} >
+                    <Icon name={'GitHub'} />
+                    {/* <Icon name={'Github'} className='project-github'/> */}
+                  </a>
+                  <a href={live} aria-label={live} >
+                    <Icon name={'Link'} />
+                  </a>
+                </div>
+                
 
               </div>
             </div>
@@ -348,7 +387,17 @@ const Project = () => {
   )
 }
 
-
+// const addIcon = (url) =>{
+//   iconList.map((name, i) => {
+//     return (
+//       <li key={i}>
+//             <a href={url} aria-label={name}>
+//               <Icon name={name} className='transparent' />
+//             </a>
+//           </li>
+//     )
+//   })
+// }
 
 
 

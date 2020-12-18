@@ -70,6 +70,9 @@ const StyledBlog = styled.div`
     border: 1px solid var(--purple);
     border-radius: 5px;
     transition: var(--transition);
+    .blog-inner>* {
+        flex: 1 1 1;
+    }
   }
 
   .blog-top {
@@ -99,6 +102,12 @@ const StyledBlog = styled.div`
   }
   .blog-bottom {
     height: 150px;
+    @media (max-width: 880px) {
+      height: 180px;
+    }
+    @media (max-width: 768px) {
+      height: 130px;
+    }
     padding: 2rem 1.75rem;
     background-color: var(--purple);
     position: relative;
@@ -106,16 +115,14 @@ const StyledBlog = styled.div`
       color: var(--blue-gray);
       
     }
-    a {
-      position: absolute;
-      right: 1.75rem;
-      botton: 2rem;
-      width: 20px;
-      height: 20px;
-
-      &:hover,
-      &:focus {
-        ${'' /* transform: translateY(6px); */}
+    .links {
+      position:absolute;
+      bottom:1.75em;
+      right:1.75em;
+      text-align: right;
+      a { 
+        width: 20px;
+        height: 20px;
       }
 
       svg {
@@ -123,9 +130,11 @@ const StyledBlog = styled.div`
         &:hover,
         &:focus {
           fill: var(--white);
+          transition: var(--transition);
         }
       }
     }
+
     @media (max-width: 580px) {
       height: 130px;
     }
@@ -164,6 +173,7 @@ const Blog = () => {
   `)
   
   const blog = data.content.edges.filter(({ node }) => node);
+  const linkIcon = 'Link';
   // console.log("Blog List : ", blog)
   return(
     <StyledBlogSection className='main' id="blog">
@@ -173,7 +183,7 @@ const Blog = () => {
           { blog.map(({ node }, i) => {
             const {frontmatter, excerpt} = node
             const {title,published,publishdate,link} = frontmatter;
-            const name = 'Link';
+           
             return(
               <StyledBlog
                 key={'blog'+i}
@@ -189,9 +199,11 @@ const Blog = () => {
                       <div className="blog-description">
                         <p>{excerpt}</p>
                       </div>
-                      <a href={link} aria-label={name}>
-                        <Icon name={name} className='blog-links'/>
-                      </a>
+                      <div className='links'>
+                        <a href={link} aria-label={linkIcon}>
+                          <Icon name={linkIcon} className='blog-links'/>
+                        </a>
+                      </div>  
                     </div>
                   </div>
               </StyledBlog>
