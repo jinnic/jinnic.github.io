@@ -8,6 +8,7 @@ import DoodlGifs from '../content/projects/gifs/Doodl.gif'
 import FlockingBirdsGifs from '../content/projects/gifs/FlockingBirds.gif'
 import NextdoorCooksGifs from '../content/projects/gifs/NextdoorCooks.gif'
 import VinterestGifs from '../content/projects/gifs/Vinterest.gif'
+import CTKGifs from '../content/projects/gifs/CTK2017SS.gif'
 
 const StyledProjectSection = styled.div`
   h2 {
@@ -37,9 +38,12 @@ const StyledProject = styled.div`
   .project-title {
     font-family: Lora;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 150%;
     margin-bottom: 0px;
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
   }
   
   .project-bottom {
@@ -116,6 +120,7 @@ const StyledProject = styled.div`
 
     border:1px solid var(--purple);
     border-radius: 11px;
+    margin: 10px 0px 10px;
 
     a {
       width: 100%;
@@ -172,12 +177,12 @@ const StyledProject = styled.div`
     display: flex;
     flex-wrap: wrap;
     z-index: 2;
-    margin: 25px 0px 10px;
+    margin: 10px 0px 10px;
     padding: 0px;
     list-style: square;
     width: 80%;
     li{
-      margin: 0px 20px 5px 0px;
+      margin: 0px 1em 5px 0px;
     }
   }
   .project-image{
@@ -251,7 +256,7 @@ const StyledProject = styled.div`
       -webkit-box-pack: end;
       justify-content: flex-end;
       li{
-        margin: 0px 0px 5px 20px;
+        margin: 0px 0px 5px 1em;
       }
     }
   }
@@ -278,8 +283,7 @@ const StyledProject = styled.div`
 
 `;
 
-const gifs = {'Doodl': DoodlGifs, 'Vinterest': VinterestGifs, 'Flocking Birds': FlockingBirdsGifs, 'Nextdoor Cooks': NextdoorCooksGifs}
-const iconList = ['Link', 'Github']
+const gifs = {'Doodl': DoodlGifs, 'Vinterest': VinterestGifs, 'Flocking Birds': FlockingBirdsGifs, 'Nextdoor Cooks': NextdoorCooksGifs, 'CTK Lookbook': CTKGifs}
 
 
 const Project = () => {
@@ -366,11 +370,10 @@ const Project = () => {
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
                 <div className='links'>
-                  <a href={github} aria-label={github} >
+                  <a href={github} aria-label={github} target="_blank" rel="noopener noreferrer">
                     <Icon name={'GitHub'} />
-                    {/* <Icon name={'Github'} className='project-github'/> */}
                   </a>
-                  <a href={live} aria-label={live} >
+                  <a href={live} aria-label={live} target="_blank" rel="noopener noreferrer">
                     <Icon name={'Link'} />
                   </a>
                 </div>
@@ -386,18 +389,6 @@ const Project = () => {
     
   )
 }
-
-// const addIcon = (url) =>{
-//   iconList.map((name, i) => {
-//     return (
-//       <li key={i}>
-//             <a href={url} aria-label={name}>
-//               <Icon name={name} className='transparent' />
-//             </a>
-//           </li>
-//     )
-//   })
-// }
 
 
 

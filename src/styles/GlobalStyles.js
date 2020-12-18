@@ -146,7 +146,10 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-weight: 700;
     font-size: 60px;
-    line-height: 130%;  
+    line-height: 130%;   
+    @media (max-width: 768px) {
+      font-size: 48px;
+    }
     @media (max-width: 480px) {
       font-size: 32px;
     }

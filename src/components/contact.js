@@ -2,7 +2,7 @@ import React from "react"
 import styled from 'styled-components';
 
 const StyledContactSection = styled.section`
-
+  max-height: 90vh;
   h5{
     font-weight: 700;
   }

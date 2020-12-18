@@ -26,16 +26,17 @@ const StyledText = styled.div`
   
   h1, h3, p{
     color: var(--white);
-    margin-bottom: 1em;
+    margin-bottom: 0.75em;
     font-weight: 700;
     line-height: 130%;
   }
   p{
     font-size: 24px;
     line-height: 150%;
-    @media (max-width: 580px) {
+    @media (max-width: 480px) {
       font-weight: 400;
       line-height: 150%;
+      font-size: 16px;
     }
   }
   .underline{
@@ -63,7 +64,7 @@ const Landing = () =>{
       <StyledText >
         <h3><Emoji symbol="👋" label="wave"/> Hi my name is Hyojin Yoo.</h3>
         <h1>I’m a creative technologist and <span className="underline">software engineer</span>.</h1>
-        <p>As a detail oriented tech junkie, I’m committed to building a great user experience with efficiency. Currently based in Brooklyn, NY.</p>      
+        <p>As a detail oriented tech junkie, I’m committed to building a great user experience with efficiency. Currently based in Brooklyn, NY.</p>     
       </StyledText>
     </StyledMainSection>
   )
