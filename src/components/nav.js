@@ -56,9 +56,9 @@ const StyledNav = styled.div`
     backdrop-filter: none;
     a {
       &:hover{
-        ${'' /* color: var(--text-highlight); */}
+        color: var(--text-highlight);
         ${'' /* text-decoration: underline; */}
-        background-color: var(--text-highlight)
+        ${'' /* background-color: var(--text-highlight) */}
       }
     } 
   }

@@ -14,11 +14,14 @@ const StyledContactSection = styled.section`
   grid-template-rows: repeat(2, 200px);
   ${'' /* align-items: center; */}
 `;
+
 export default function Contact() {
+
+
   return (
     <StyledContactSection className='main' id="contact">
       <h5>Let's get in touch</h5>
-      <div >
+      <div id='contactList'>
         <p>yoohyojin@gmail.com</p>
         <p>linkedin.com/in/hyojinyoo</p>
         <p>medium.com/@hyojin</p>
